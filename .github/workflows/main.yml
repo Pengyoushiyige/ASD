@@ -40,4 +40,4 @@ jobs:
         with:
           find: "16:18"
           replace: "world"
-          regex: false
+          regex: true
