@@ -34,10 +34,18 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-
+          
+      - name: Get current time
+        uses: gerred/actions/current-time@master
+        id: current-time
+      - name: Use current time
+        env:
+          TIME: "${{ steps.current-time.outputs.time }}"
+        run: echo $TIME
+        
       - name: Find and Replace
         uses: jacobtomlinson/gha-find-replace@v2
         with:
-          find: "16:18"
-          replace: "world"
+          find: "fuckpooh"
+          replace: TIME
           regex: true
